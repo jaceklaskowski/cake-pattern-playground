@@ -1,6 +1,7 @@
-case class User(id: Long, login: String)
-
 trait UserModule {
+
+  case class User(id: Long, login: String)
+
   val loginPrefix: String
   def loadUser(id: Long): User
 }
