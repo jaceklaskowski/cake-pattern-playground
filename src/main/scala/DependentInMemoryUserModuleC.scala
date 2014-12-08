@@ -1,0 +1,1 @@
+class DependentInMemoryUserModuleC extends DoNothingUserModule

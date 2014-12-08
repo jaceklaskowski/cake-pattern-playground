@@ -1,0 +1,1 @@
+trait DependentInMemoryUserModule extends DoNothingUserModule
