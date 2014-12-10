@@ -1,1 +1,1 @@
-class H2UserModuleC extends MySQLUserModule with DoNothingLifecycle
+class H2UserModuleC extends DoNothingLifecycle with MySQLUserModule

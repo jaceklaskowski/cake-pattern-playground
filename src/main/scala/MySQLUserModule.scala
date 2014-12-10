@@ -1,6 +1,10 @@
 trait MySQLUserModule extends UserModule with Lifecycle {
 
-  override def User(id: Long, login: String): User = ???
+  class User(val id: Long, val login: String) extends UserLike {
+  }
+  override def loginPrefix: String = "mysql"
+
+  override def User(id: Long, login: String): User = new User(id,login)
 
   abstract override def startup() {
     super.startup()
@@ -11,4 +15,6 @@ trait MySQLUserModule extends UserModule with Lifecycle {
     println("shutin' down")
     super.shutdown()
   }
+
+  override def loadUser(id: Long): User = User(id,loginPrefix)
 }
